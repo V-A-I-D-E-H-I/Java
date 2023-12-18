@@ -1,0 +1,133 @@
+object HelloWorld {
+	def main(args: Array[String]): Unit = {
+	  
+	  
+	println("Enter 5 speeds")
+	var a= scala.io.StdIn.readDouble()
+	var b= scala.io.StdIn.readDouble()
+	var c= scala.io.StdIn.readDouble()
+	var d= scala.io.StdIn.readDouble()
+	var e= scala.io.StdIn.readDouble()
+	
+	var avg= (a+b+c+d+e)/5
+	
+	if(d>avg){
+	  println(a)
+	}
+	
+	}
+}
+
+
+2)
+class pc{
+  
+  def display(): Unit = {
+    println("In parent class")
+  }
+  
+}
+
+class cc extends pc{
+  
+  override def display(): Unit = {
+    println("In child class")
+  }
+  
+}
+
+
+object HelloWorld {
+	def main(args: Array[String]): Unit = {
+	  
+	  
+	  val obj1= new pc()
+	  val obj2= new cc()
+	  obj1.display
+	  obj2.display
+	  
+	  
+	  val obj3= obj2: pc
+	  obj3.display
+	  
+	  
+	 
+	}
+}
+
+3)
+class member(var Name : String,var Age : Int, var Pn : Int, var Address : String, Salary : Int){
+  
+  def printSalary(): Unit = {
+    println(s"$Salary")
+  }
+}
+
+class Employee(Name : String, Age : Int, Pn : Int, Address : String, Salary : Int, var Spec : String) extends member(Name, Age, Pn, Address, Salary) {
+  
+  
+}
+
+class Manager(Name : String, Age : Int, Pn : Int, Address : String, Salary : Int, var Dept : String) extends member(Name, Age, Pn, Address, Salary) {
+  
+  
+  
+}
+
+
+object HelloWorld {
+	def main(args: Array[String]): Unit = {
+	  
+	  
+	  val obj1= new Employee("P1",28,1234,"Add1",50,"Dept1")
+	  val obj2= new Manager("P2",29,12345,"Add2",100,"Dept2")
+	  obj1.printSalary()
+	  obj2.printSalary()
+	  
+	  println(s"${obj1.Name}")
+	  println(s"${obj2.Name}")
+	  
+	  println(s"${obj1.Spec}")
+	  println(s"${obj2.Dept}")
+	  
+	  
+	
+	  
+	  
+	 
+	}
+}
+
+4)
+class Rectangle(var length : Double, var breadth : Double){
+  def Area(): Double = {
+    length*breadth
+  }
+  def Perimeter(): Double = {
+    2*(length+breadth)
+  }
+}
+
+class Square(side: Double) extends Rectangle(side, side)
+
+
+
+object HelloWorld {
+	def main(args: Array[String]): Unit = {
+	  
+	  
+	  val obj1= new Rectangle(3.0,4.0)
+	  println(s"${obj1.Area}")
+	  println(s"${obj1.Perimeter}")
+	  
+	  
+	  val obj2= new Square(5.0)
+	  println(s"${obj2.Area}")
+	  println(s"${obj2.Perimeter}")
+
+
+	  
+	  
+	 
+	}
+}
